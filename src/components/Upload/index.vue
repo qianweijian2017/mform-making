@@ -9,23 +9,24 @@
       class="upload-file" v-for="(item) in fileList" :key="item.key">
       <img :src="item.url" />
 
-      <el-progress v-if="item.status=='uploading'" :width="miniWidth*0.9" class="upload-progress" type="circle" :percentage="item.percent"></el-progress>
+      <i-circle v-if="item.status=='uploading'" :size="miniWidth*0.9" class="upload-progress" :percent="item.percent"></i-circle>
 
       <label class="item-status" v-if="item.status=='success'">
-        <i class="el-icon-upload-success el-icon-check"></i>
+        <Icon type="md-checkmark" />
       </label>
 
       <div class="uplaod-action">
-        <i class="el-icon-view" @click="handlePreviewFile(item.key)" :style="{'font-size': miniWidth/4+'px'}"></i>
-        <i class="el-icon-delete" @click="handleRemove(item.key)" :style="{'font-size': miniWidth/4+'px'}"></i>
+        <Icon type="ios-eye-outline" @click="handlePreviewFile(item.key)" :style="{'font-size': miniWidth/4+'px'}"></Icon>
+        <Icon type="ios-trash-outline" @click="handleRemove(item.key)" :style="{'font-size': miniWidth/4+'px'}"></Icon>
       </div>
     </div>
 
-    <div class="el-upload el-upload--picture-card"
+    <div class="ivu-upload-drag el-upload--picture-card"
       v-if="token"
-      :style="{width: width+'px', height: height+'px'}"
+      :style="{width: width+'px', height: height+'px','line-height': height+'px'}"
     >
-      <i class="el-icon-plus" :style="{fontSize:miniWidth/4+'px',marginTop: (-miniWidth/8)+'px', marginLeft: (-miniWidth/8)+'px'}"></i>
+      <!-- <i class="el-icon-plus" :style="{fontSize:miniWidth/4+'px',marginTop: (-miniWidth/8)+'px', marginLeft: (-miniWidth/8)+'px'}"></i> -->
+      <Icon type="ios-camera" size="20"></Icon>
       <input accept="image/*" multiple ref="uploadInput" @change="handleChange" type="file" :style="{width: width+'px', height: height+'px'}" name="file" class="el-upload__input upload-input">
     </div>
   </div>
@@ -86,12 +87,10 @@ export default {
     handleChange () {
       console.log(this.$refs.uploadInput.files)
       const files = this.$refs.uploadInput.files
-
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
         const reader = new FileReader()
         const key = (new Date().getTime()) + '_' + Math.ceil(Math.random() * 99999)
-
         reader.readAsDataURL(file)
         reader.onload = () => {
           this.fileList.push({
@@ -100,20 +99,17 @@ export default {
             percent: 0,
             status: 'uploading'
           })
-
           this.$nextTick(() => {
             this.uplaodAction(reader.result, file, key)
           })
         }
       }
-
       this.$refs.uploadInput.value = []
     }, 
 
     uplaodAction (res, file, key) {
       let changeIndex = this.fileList.findIndex(item => item.key === key)
       console.log(this.fileList.findIndex(item => item.key === key))
-
       const xhr = new XMLHttpRequest()
       const url = 'http://upload-z2.qiniu.com/putb64/' + file.size
       xhr.open('POST', url, true)
@@ -227,7 +223,6 @@ export default {
 
         &>i{
           font-size: 12px;
-          margin-top: 11px;
           color: #fff;
           transform: rotate(-45deg);
         }
@@ -266,7 +261,7 @@ export default {
   .el-upload--picture-card{
     position: relative;
     overflow: hidden;
-
+    display: inline-block;
     .el-icon-plus{
       position: absolute;
       top: 50%;

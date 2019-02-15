@@ -18,11 +18,11 @@ import 'vue-awesome/icons/toggle-off'
 import 'vue-awesome/icons/sliders-h'
 import 'vue-awesome/icons/regular/image'
 import 'vue-awesome/icons/chalkboard'
-import MakingForm from './components/Container.vue'
+import MakingForm from './components/Container_test.vue'
 import GenerateForm from './components/GenerateForm.vue'
-
+// alert('in')
 Vue.component('icon', Icon)
-
+alert('3')
 MakingForm.install = function (Vue) {
   Vue.component(MakingForm.name, MakingForm)
 }

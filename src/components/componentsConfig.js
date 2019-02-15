@@ -7,11 +7,9 @@ export const basicComponents = [
       width: '100%',
       defaultValue: '',
       required: false,
-      dataType: 'string',
+      dataType: 'text',
       pattern: '',
-      placeholder: '',
-      readonly: false,
-      disabled: false
+      placeholder: ''
     }
   },
   {
@@ -34,8 +32,8 @@ export const basicComponents = [
       width: '',
       required: false,
       defaultValue: 0,
-      min: '',
-      max: '',
+      min: 0,
+      max: 0,
       step: 1,
       disabled: false,
       controlsPosition: ''
@@ -46,7 +44,7 @@ export const basicComponents = [
     name: '单选框组',
     icon: 'regular/dot-circle',
     options: {
-      inline: false,
+      inline: 'false',
       defaultValue: '',
       showLabel: false,
       options: [
@@ -65,7 +63,7 @@ export const basicComponents = [
       ],
       required: false,
       width: '',
-      remote: false,
+      remote: 'false',
       remoteOptions: [],
       props: {
         value: 'value',
@@ -79,7 +77,7 @@ export const basicComponents = [
     name: '多选框组',
     icon: 'regular/check-square',
     options: {
-      inline: false,
+      inline: 'false',
       defaultValue: [],
       showLabel: false,
       options: [
@@ -95,7 +93,7 @@ export const basicComponents = [
       ],
       required: false,
       width: '',
-      remote: false,
+      remote: 'false',
       remoteOptions: [],
       props: {
         value: 'value',
@@ -190,7 +188,7 @@ export const basicComponents = [
           value: '下拉框3'
         }
       ],
-      remote: false,
+      remote: 'false',
       remoteOptions: [],
       props: {
         value: 'value',

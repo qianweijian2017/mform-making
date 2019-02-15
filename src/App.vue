@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="fm-header">
+    <!-- <div class="fm-header">
       <img class="fm-logo" src="./assets/logo.png">
       <div class="fm-title">表单设计器</div>
 
@@ -13,15 +13,20 @@
         <a href="https://gitee.com/gavinzhulei/vue-form-making">码云</a>
         <a href="http://www.xiaoyaoji.cn" target="_blank">小幺鸡接口文档</a>
       </div>
-    </div>
-    <div class="fm-container"><router-view/></div>
+    </div> -->
+    <!-- <div class="fm-container"><router-view/></div> -->
+    <router-view/>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'app'
+  name: 'app',
+  created(){
+    console.log('app')
+
+  }
 }
 </script>
 

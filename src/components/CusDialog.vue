@@ -1,8 +1,8 @@
 <template>
-  <el-dialog
+  <Modal
     class="cus-dialog-container"
     :title="title"
-    :visible.sync="dialogVisible"
+    v-model="dialogVisible"
     :close-on-click-modal="false"
     center
     :width="width"
@@ -12,15 +12,20 @@
     <span v-if="show">
       <slot></slot>
     </span>
-
-    <span v-if="action" slot="footer" class="dialog-footer" v-loading="loading"
-      :element-loading-text="loadingText">
+    <span v-if="action" slot="footer" class="dialog-footer">
       <slot name="action">
-        <el-button @click="close">取消</el-button>
-        <el-button type="primary" @click="submit" >确 定</el-button>
+        <Button @click="close">取消</Button>
+        <Button type="primary" @click="submit" >确 定</Button>
       </slot>
     </span>
-  </el-dialog>
+    <!-- <span v-if="action" slot="footer" class="dialog-footer" v-loading="loading"
+      :element-loading-text="loadingText">
+      <slot name="action">
+        <Button @click="close">取消</Button>
+        <Button type="primary" @click="submit" >确 定</Button>
+      </slot>
+    </span> -->
+  </Modal>
 </template>
 
 <script>

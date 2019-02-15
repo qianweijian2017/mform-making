@@ -1,6 +1,6 @@
 <template>
   <div class="widget-form-container">
-    <el-form :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
+    <Form :label-position="data.config.labelPosition" :label-width="data.config.labelWidth">
       
       <draggable class="widget-form-list" 
         
@@ -13,14 +13,14 @@
         <template v-for="(element, index) in data.list">
           <template v-if="element.type == 'grid'">
             <div v-if="element && element.key"  class="widget-grid-container data-grid" :key="element.key" style="position: relative;">
-              <el-row class="widget-grid "
+              <Row class="widget-grid"
                 type="flex"
                 :class="{active: selectWidget.key == element.key}"
                 :gutter="element.options.gutter ? element.options.gutter : 0"
                 :justify="element.options.justify"
                 :align="element.options.align"
                 @click.native="handleSelectWidget(index)">
-                <el-col  v-for="(col, colIndex) in element.columns" :key="colIndex" :span="col.span ? col.span : 0">
+                <Col v-for="(col, colIndex) in element.columns" :key="colIndex" :span="col.span ? col.span : 0">
                   <div style="border: 1px dashed #999;">
                     <draggable
                       class="widget-form-list" 
@@ -41,12 +41,11 @@
                         :data="col"></widget-form-item>
                     </draggable>
                   </div>
-                </el-col>
-                
-              </el-row>
-              <el-button title="删除" style="bottom: -20px;" @click.stop="handleWidgetDelete(index)" class="widget-action-delete" v-if="selectWidget.key == element.key" circle plain type="danger">
+                </Col>
+              </Row>
+              <Button title="删除" style="bottom: -20px;line-height:1;padding:8px;" @click.stop="handleWidgetDelete(index)" class="widget-action-delete" v-if="selectWidget.key == element.key" shape="circle" type="error" ghost>
                 <icon name="regular/trash-alt" style="width: 12px;height: 12px;"></icon>
-              </el-button>
+              </Button>
             </div>
           </template>
           <template v-else>
@@ -55,7 +54,7 @@
         </template>
             
       </draggable>
-    </el-form>
+    </Form>
   </div>
 </template>
 
@@ -76,18 +75,19 @@ export default {
   },
   methods: {
     handleMoveEnd ({newIndex, oldIndex}) {
-      console.log('index', newIndex, oldIndex)
+      //console.log('index', newIndex, oldIndex)
     },
     handleSelectWidget (index) {
-      console.log(index, '#####')
+      //console.log(index, '#####')
       this.selectWidget = this.data.list[index]
     },
     handleWidgetAdd (evt) {
-      console.log('add', evt)
-      console.log('end', evt)
+      //console.log(this.data)
+      //console.log('add', evt)
+      //console.log('end', evt)
       const newIndex = evt.newIndex
       const to = evt.to
-      console.log(to)
+      //console.log(to)
       
       //为拖拽到容器的元素添加唯一 key
       const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
@@ -141,7 +141,7 @@ export default {
         return false
       }
 
-      console.log('from', item)
+      //console.log('from', item)
 
       const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
 

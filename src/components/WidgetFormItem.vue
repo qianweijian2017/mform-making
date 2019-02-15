@@ -1,63 +1,58 @@
 <template>
-  <el-form-item class="widget-view "
+  <FormItem class="widget-view "
       v-if="element && element.key" 
       :class="{active: selectWidget.key == element.key, 'is_req': element.options.required}"
       :label="element.name"
       @click.native="handleSelectWidget(index)"
     >
         <template v-if="element.type == 'input'">
-          <el-input 
+          <Input 
             v-model="element.options.defaultValue"
             :style="{width: element.options.width}"
             :placeholder="element.options.placeholder"
-          ></el-input>
+          />
         </template>
-
         <template v-if="element.type == 'textarea'">
-          <el-input type="textarea" :rows="5"
+          <Input type="textarea" :rows="5"
             v-model="element.options.defaultValue"
             :style="{width: element.options.width}"
             :placeholder="element.options.placeholder"
-          ></el-input>
+          />
         </template>
-
         <template v-if="element.type == 'number'">
-          <el-input-number 
+          <InputNumber 
             v-model="element.options.defaultValue" 
             :disabled="element.options.disabled"
             :controls-position="element.options.controlsPosition"
             :style="{width: element.options.width}"
-          ></el-input-number>
+          ></InputNumber>
         </template>
-
         <template v-if="element.type == 'radio'">
-          <el-radio-group v-model="element.options.defaultValue"
+          <RadioGroup v-model="element.options.defaultValue"
             :style="{width: element.options.width}"
           >
-            <el-radio  
-              :style="{display: element.options.inline ? 'inline-block' : 'block'}"
+            <Radio  
+              :style="{display: element.options.inline!=='false' ? 'inline-block' : 'block'}"
               :label="item.value" v-for="(item, index) in element.options.options" :key="item.value + index"
             >
               {{element.options.showLabel ? item.label : item.value}}
-            </el-radio>
-          </el-radio-group>
+            </Radio>
+          </RadioGroup>
         </template>
-
         <template v-if="element.type == 'checkbox'">
-          <el-checkbox-group v-model="element.options.defaultValue"
+          <CheckboxGroup v-model="element.options.defaultValue"
             :style="{width: element.options.width}"
           >
-            <el-checkbox
-              :style="{display: element.options.inline ? 'inline-block' : 'block'}"
+            <Checkbox
+              :style="{display: element.options.inline!=='false' ? 'inline-block' : 'block'}"
               :label="item.value" v-for="(item, index) in element.options.options" :key="item.value + index"
             >
               {{element.options.showLabel ? item.label : item.value}}
-            </el-checkbox>
-          </el-checkbox-group>
+            </Checkbox>
+          </CheckboxGroup>
         </template>
-
         <template v-if="element.type == 'time'">
-          <el-time-picker 
+          <TimePicker 
             v-model="element.options.defaultValue"
             :is-range="element.options.isRange"
             :placeholder="element.options.placeholder"
@@ -70,11 +65,10 @@
             :arrowControl="element.options.arrowControl"
             :style="{width: element.options.width}"
           >
-          </el-time-picker>
+          </TimePicker>
         </template>
-
         <template v-if="element.type == 'date'">
-          <el-date-picker
+          <DatePicker
             v-model="element.options.defaultValue"
             :type="element.options.type"
             :is-range="element.options.isRange"
@@ -87,27 +81,24 @@
             :clearable="element.options.clearable"
             :style="{width: element.options.width}"  
           >
-          </el-date-picker>
+          </DatePicker>
         </template>
-
         <template v-if="element.type == 'rate'">
-          <el-rate v-model="element.options.defaultValue"
+          <Rate v-model="element.options.defaultValue"
             :max="element.options.max"
             :disabled="element.options.disabled"
             :allow-half="element.options.allowHalf"
-          ></el-rate>
+          />
         </template>
-
         <template v-if="element.type == 'color'">
-          <el-color-picker 
+          <ColorPicker 
             v-model="element.options.defaultValue"
             :disabled="element.options.disabled"
             :show-alpha="element.options.showAlpha"
-          ></el-color-picker>
+          />
         </template>
-
         <template v-if="element.type == 'select'">
-          <el-select
+          <Select
             v-model="element.options.defaultValue"
             :disabled="element.options.disabled"
             :multiple="element.options.multiple"
@@ -115,20 +106,14 @@
             :placeholder="element.options.placeholder"
             :style="{width: element.options.width}"
           >
-            <el-option v-for="item in element.options.options" :key="item.value" :value="item.value" :label="element.options.showLabel?item.label:item.value"></el-option>
-          </el-select>
+            <Option v-for="item in element.options.options" :key="item.value" :value="item.value" :label="element.options.showLabel?item.label:item.value"></Option>
+          </Select>
         </template>
-
         <template v-if="element.type=='switch'">
-          <el-switch
-            v-model="element.options.defaultValue"
-            :disabled="element.options.disabled"
-          >
-          </el-switch>
+          <i-switch v-model="element.options.defaultValue" :disabled="element.options.disabled"/>
         </template>
-
         <template v-if="element.type=='slider'">
-          <el-slider 
+          <Slider 
             v-model="element.options.defaultValue"
             :min="element.options.min"
             :max="element.options.max"
@@ -137,9 +122,8 @@
             :show-input="element.options.showInput"
             :range="element.options.range"
             :style="{width: element.options.width}"
-          ></el-slider>
+          ></Slider>
         </template>
-
         <template v-if="element.type=='imgupload'">
           <fm-upload
             v-model="element.options.defaultValue"
@@ -149,23 +133,21 @@
             :height="element.options.size.height"
             token="xxx"
             domain="xxx"
-          >
-            
+          > 
           </fm-upload>
         </template>
-
         <template v-if="element.type=='blank'">
           <div style="height: 50px;color: #999;background: #eee;line-height:50px;text-align:center;">自定义区域</div>
         </template>
 
-        <el-button title="删除" @click.stop="handleWidgetDelete(index)" class="widget-action-delete" v-if="selectWidget.key == element.key" circle plain type="danger">
+        <Button title="删除" @click.stop="handleWidgetDelete(index)" class="widget-action-delete" v-if="selectWidget.key == element.key" shape="circle" type="error" ghost style='line-height:1;padding:8px;'>
           <icon name="regular/trash-alt" style="width: 12px;height: 12px;"></icon>
-        </el-button>
-        <el-button title="复制" @click.stop="handleWidgetClone(index)" class="widget-action-clone" v-if="selectWidget.key == element.key" circle plain type="primary">
+        </Button>
+        <Button title="复制" @click.stop="handleWidgetClone(index)" class="widget-action-clone" v-if="selectWidget.key == element.key" shape="circle" type="info" ghost style='line-height:1;padding:8px;'>
           <icon name="regular/clone" style="width: 12px;height: 12px;"></icon>
-        </el-button>
+        </Button>
         
-    </el-form-item>
+    </FormItem>
 </template>
 
 <script>
