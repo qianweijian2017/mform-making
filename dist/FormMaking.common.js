@@ -29737,6 +29737,7 @@ oop.inherits(Mode, TextMode);
     };
 
     this.createWorker = function(session) {
+
         var worker = new WorkerClient(["ace"], __webpack_require__("e070"), "Worker");
         worker.attachToDocument(session.getDocument());
 
@@ -32628,7 +32629,378 @@ Icon.register({"regular/image":{"width":512,"height":512,"paths":[{"d":"M464 64H
 Icon.register({"chalkboard":{"width":640,"height":512,"paths":[{"d":"M96 64H544V416H608V40C608 17.9 590.1 0 568 0H72C49.9 0 32 17.9 32 40V416H96V64zM624 448H480V384H288V448H16C7.2 448 0 455.2 0 464V496C0 504.8 7.2 512 16 512H624C632.8 512 640 504.8 640 496V464C640 455.2 632.8 448 624 448z"}]}})
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"23926899-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Container_test.vue?vue&type=template&id=0462d3b7&
-var Container_testvue_type_template_id_0462d3b7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Layout',{staticStyle:{"height":"100%"}},[_c('Sider',{staticStyle:{"background":"#fff"},attrs:{"hide-trigger":"","collapsible":"","width":300}},[_c('div',{staticClass:"components-list"},[_c('div',{staticClass:"widget-cate"},[_vm._v("基础字段")]),_c('draggable',{attrs:{"element":"ul","list":_vm.basicComponents,"options":{group:{ name:'people', pull:'clone',put:false},sort:false, ghostClass: 'ghost'},"move":_vm.handleMove},on:{"end":_vm.handleMoveEnd,"start":_vm.handleMoveStart}},_vm._l((_vm.basicComponents),function(item,index){return _c('li',{key:index,staticClass:"form-edit-widget-label"},[_c('a',[_c('icon',{staticClass:"icon",attrs:{"name":item.icon}}),_c('span',[_vm._v(_vm._s(item.name))])],1)])})),_c('div',{staticClass:"widget-cate"},[_vm._v("高级字段")]),_c('draggable',{attrs:{"element":"ul","list":_vm.advanceComponents,"options":{group:{ name:'people', pull:'clone',put:false},sort:false, ghostClass: 'ghost'},"move":_vm.handleMove},on:{"end":_vm.handleMoveEnd,"start":_vm.handleMoveStart}},_vm._l((_vm.advanceComponents),function(item,index){return _c('li',{key:index,staticClass:"form-edit-widget-label"},[_c('a',[_c('icon',{staticClass:"icon",attrs:{"name":item.icon}}),_c('span',[_vm._v(_vm._s(item.name))])],1)])})),_c('div',{staticClass:"widget-cate"},[_vm._v("布局字段")]),_c('draggable',{attrs:{"element":"ul","list":_vm.layoutComponents,"options":{group:{ name:'people', pull:'clone',put:false},sort:false, ghostClass: 'ghost'},"move":_vm.handleMove},on:{"end":_vm.handleMoveEnd,"start":_vm.handleMoveStart}},_vm._l((_vm.layoutComponents),function(item,index){return _c('li',{key:index,staticClass:"form-edit-widget-label data-grid"},[_c('a',[_c('icon',{staticClass:"icon",attrs:{"name":item.icon}}),_c('span',[_vm._v(_vm._s(item.name))])],1)])}))],1)]),_c('Layout',{staticClass:"center-container"},[_c('Header',{staticClass:"btn-bar",staticStyle:{"height":"45px"}},[_c('Button',{attrs:{"type":"text","size":"small","icon":"el-icon-view"},on:{"click":_vm.handlePreview}},[_vm._v("预览")]),_c('Button',{attrs:{"type":"text","size":"small","icon":"el-icon-tickets"},on:{"click":_vm.handleGenerateJson}},[_vm._v("生成JSON")]),_c('Button',{attrs:{"type":"text","size":"small","icon":"el-icon-document"},on:{"click":_vm.handleGenerateCode}},[_vm._v("生成代码")])],1),_c('Content',{class:{'widget-empty': _vm.widgetForm.list.length == 0}},[_c('widget-form',{ref:"widgetForm",attrs:{"data":_vm.widgetForm,"select":_vm.widgetFormSelect},on:{"update:select":function($event){_vm.widgetFormSelect=$event}}})],1)],1),_c('Sider',{staticClass:"widget-config-container",staticStyle:{"background":"#fff"},attrs:{"width":300}},[_c('Layout',[_c('Header',{staticStyle:{"height":"45px"}},[_c('div',{staticClass:"config-tab",class:{active: _vm.configTab=='widget'},on:{"click":function($event){_vm.handleConfigSelect('widget')}}},[_vm._v("字段属性")]),_c('div',{staticClass:"config-tab",class:{active: _vm.configTab=='form'},on:{"click":function($event){_vm.handleConfigSelect('form')}}},[_vm._v("表单属性")])]),_c('Content',{staticClass:"config-content"},[_c('widget-config',{directives:[{name:"show",rawName:"v-show",value:(_vm.configTab=='widget'),expression:"configTab=='widget'"}],attrs:{"data":_vm.widgetFormSelect}}),_c('form-config',{directives:[{name:"show",rawName:"v-show",value:(_vm.configTab=='form'),expression:"configTab=='form'"}],attrs:{"data":_vm.widgetForm.config}})],1)],1)],1),_c('cus-dialog',{ref:"widgetPreview",attrs:{"visible":_vm.previewVisible,"title":"预览","width":"1000px","form":""},on:{"on-close":function($event){_vm.previewVisible = false},"on-submit":_vm.handleTest}},[(_vm.previewVisible)?_c('generate-form',{ref:"generateForm",attrs:{"data":_vm.widgetForm,"remote":_vm.remoteFuncs,"value":_vm.widgetModels},scopedSlots:_vm._u([{key:"blank",fn:function(scope){return [_vm._v("\n        宽度："),_c('Input',{staticStyle:{"width":"100px"},model:{value:(scope.model.blank.width),callback:function ($$v) {_vm.$set(scope.model.blank, "width", $$v)},expression:"scope.model.blank.width"}}),_vm._v("\n        高度："),_c('Input',{staticStyle:{"width":"100px"},model:{value:(scope.model.blank.height),callback:function ($$v) {_vm.$set(scope.model.blank, "height", $$v)},expression:"scope.model.blank.height"}})]}}])}):_vm._e()],1),_c('cus-dialog',{ref:"jsonPreview",attrs:{"visible":_vm.jsonVisible,"title":"JSON","width":"800px","form":""},on:{"on-close":function($event){_vm.jsonVisible = false}}},[_c('editor',{attrs:{"lang":"json","height":"340"},on:{"init":_vm.editorInit},model:{value:(_vm.jsonTemplateFn),callback:function ($$v) {_vm.jsonTemplateFn=$$v},expression:"jsonTemplateFn"}}),_c('template',{slot:"action"},[_c('Button',{attrs:{"id":"copybtn","data-clipboard-target":".ace_text-input"}},[_vm._v("双击复制")])],1)],2),_c('cus-dialog',{ref:"codePreview",attrs:{"visible":_vm.codeVisible,"title":"HTML代码","width":"800px","form":"","action":false},on:{"on-close":function($event){_vm.codeVisible = false}}},[_c('editor',{attrs:{"lang":"html","height":"340"},on:{"init":_vm.editorInit},model:{value:(_vm.htmlTemplate),callback:function ($$v) {_vm.htmlTemplate=$$v},expression:"htmlTemplate"}})],1)],1)}
+var Container_testvue_type_template_id_0462d3b7_render = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c('Layout', {
+        staticStyle: {
+            "height": "100%"
+        }
+    },
+    [_c('Sider', {
+        staticStyle: {
+            "background": "#fff"
+        },
+        attrs: {
+            "hide-trigger": "",
+            "collapsible": "",
+            "width": 300
+        }
+    },
+    [_c('div', {
+        staticClass: "components-list"
+    },
+    [_c('div', {
+        staticClass: "widget-cate"
+    },
+    [_vm._v("基础字段")]), _c('draggable', {
+        attrs: {
+            "element": "ul",
+            "list": _vm.basicComponents,
+            "options": {
+                group: {
+                    name: 'people',
+                    pull: 'clone',
+                    put: false
+                },
+                sort: false,
+                ghostClass: 'ghost'
+            },
+            "move": _vm.handleMove
+        },
+        on: {
+            "end": _vm.handleMoveEnd,
+            "start": _vm.handleMoveStart
+        }
+    },
+    _vm._l((_vm.basicComponents),
+    function(item, index) {
+        return _c('li', {
+            key: index,
+            staticClass: "form-edit-widget-label"
+        },
+        [_c('a', [_c('icon', {
+            staticClass: "icon",
+            attrs: {
+                "name": item.icon
+            }
+        }), _c('span', [_vm._v(_vm._s(item.name))])], 1)])
+    })), _c('div', {
+        staticClass: "widget-cate"
+    },
+    [_vm._v("高级字段")]), _c('draggable', {
+        attrs: {
+            "element": "ul",
+            "list": _vm.advanceComponents,
+            "options": {
+                group: {
+                    name: 'people',
+                    pull: 'clone',
+                    put: false
+                },
+                sort: false,
+                ghostClass: 'ghost'
+            },
+            "move": _vm.handleMove
+        },
+        on: {
+            "end": _vm.handleMoveEnd,
+            "start": _vm.handleMoveStart
+        }
+    },
+    _vm._l((_vm.advanceComponents),
+    function(item, index) {
+        return _c('li', {
+            key: index,
+            staticClass: "form-edit-widget-label"
+        },
+        [_c('a', [_c('icon', {
+            staticClass: "icon",
+            attrs: {
+                "name": item.icon
+            }
+        }), _c('span', [_vm._v(_vm._s(item.name))])], 1)])
+    })), _c('div', {
+        staticClass: "widget-cate"
+    },
+    [_vm._v("布局字段")]), _c('draggable', {
+        attrs: {
+            "element": "ul",
+            "list": _vm.layoutComponents,
+            "options": {
+                group: {
+                    name: 'people',
+                    pull: 'clone',
+                    put: false
+                },
+                sort: false,
+                ghostClass: 'ghost'
+            },
+            "move": _vm.handleMove
+        },
+        on: {
+            "end": _vm.handleMoveEnd,
+            "start": _vm.handleMoveStart
+        }
+    },
+    _vm._l((_vm.layoutComponents),
+    function(item, index) {
+        return _c('li', {
+            key: index,
+            staticClass: "form-edit-widget-label data-grid"
+        },
+        [_c('a', [_c('icon', {
+            staticClass: "icon",
+            attrs: {
+                "name": item.icon
+            }
+        }), _c('span', [_vm._v(_vm._s(item.name))])], 1)])
+    }))], 1)]), _c('Layout', {
+        staticClass: "center-container"
+    },
+    [_c('Header', {
+        staticClass: "btn-bar",
+        staticStyle: {
+            "height": "45px"
+        }
+    },
+    [_c('Button', {
+        attrs: {
+            "type": "text",
+            "size": "small",
+            "icon": "el-icon-view"
+        },
+        on: {
+            "click": _vm.handlePreview
+        }
+    },
+    [
+        _vm._v("预览")]), 
+            _c('Button', {
+                attrs: {
+                    "type": "text",
+                    "size": "small",
+                    "icon": "el-icon-tickets"
+                },
+                on: {
+                "click": _vm.handleGenerateJson
+                    }
+            },
+            [
+          _vm._v("提交保存")]
+        ), 
+
+            // _c('Button', {
+            //     attrs: {
+            //         "type": "text",
+            //         "size": "small",
+            //         "icon": "el-icon-document"
+            //     },
+            //     on: {
+            //         "click": _vm.handleGenerateCode
+            //     }
+            // },
+            // [
+            //      _vm._v("生成代码")]
+            // )
+    ], 
+    1), 
+    _c('Content', {
+        class: {
+            'widget-empty': _vm.widgetForm.list.length == 0
+        }
+    },
+    [_c('widget-form', {
+        ref: "widgetForm",
+        attrs: {
+            "data": _vm.widgetForm,
+            "select": _vm.widgetFormSelect
+        },
+        on: {
+            "update:select": function($event) {
+                _vm.widgetFormSelect = $event
+            }
+        }
+    })], 1)], 1), _c('Sider', {
+        staticClass: "widget-config-container",
+        staticStyle: {
+            "background": "#fff"
+        },
+        attrs: {
+            "width": 300
+        }
+    },
+    [_c('Layout', [_c('Header', {
+        staticStyle: {
+            "height": "45px"
+        }
+    },
+    [_c('div', {
+        staticClass: "config-tab",
+        class: {
+            active: _vm.configTab == 'widget'
+        },
+        on: {
+            "click": function($event) {
+                _vm.handleConfigSelect('widget')
+            }
+        }
+    },
+    [_vm._v("字段属性")]), _c('div', {
+        staticClass: "config-tab",
+        class: {
+            active: _vm.configTab == 'form'
+        },
+        on: {
+            "click": function($event) {
+                _vm.handleConfigSelect('form')
+            }
+        }
+    },
+    [_vm._v("表单属性")])]), _c('Content', {
+        staticClass: "config-content"
+    },
+    [_c('widget-config', {
+        directives: [{
+            name: "show",
+            rawName: "v-show",
+            value: (_vm.configTab == 'widget'),
+            expression: "configTab=='widget'"
+        }],
+        attrs: {
+            "data": _vm.widgetFormSelect
+        }
+    }), _c('form-config', {
+        directives: [{
+            name: "show",
+            rawName: "v-show",
+            value: (_vm.configTab == 'form'),
+            expression: "configTab=='form'"
+        }],
+        attrs: {
+            "data": _vm.widgetForm.config
+        }
+    })], 1)], 1)], 1), _c('cus-dialog', {
+        ref: "widgetPreview",
+        attrs: {
+            "visible": _vm.previewVisible,
+            "title": "预览",
+            "width": "1000px",
+            "form": ""
+        },
+        on: {
+            "on-close": function($event) {
+                _vm.previewVisible = false
+            },
+            "on-submit": _vm.handleTest
+        }
+    },
+    [(_vm.previewVisible) ? _c('generate-form', {
+        ref: "generateForm",
+        attrs: {
+            "data": _vm.widgetForm,
+            "remote": _vm.remoteFuncs,
+            "value": _vm.widgetModels
+        },
+        scopedSlots: _vm._u([{
+            key: "blank",
+            fn: function(scope) {
+                return [_vm._v("\n        宽度："), _c('Input', {
+                    staticStyle: {
+                        "width": "100px"
+                    },
+                    model: {
+                        value: (scope.model.blank.width),
+                        callback: function($$v) {
+                            _vm.$set(scope.model.blank, "width", $$v)
+                        },
+                        expression: "scope.model.blank.width"
+                    }
+                }), _vm._v("\n        高度："), _c('Input', {
+                    staticStyle: {
+                        "width": "100px"
+                    },
+                    model: {
+                        value: (scope.model.blank.height),
+                        callback: function($$v) {
+                            _vm.$set(scope.model.blank, "height", $$v)
+                        },
+                        expression: "scope.model.blank.height"
+                    }
+                })]
+            }
+        }])
+    }) : _vm._e()], 1), _c('cus-dialog', {
+        ref: "jsonPreview",
+        attrs: {
+            "visible": _vm.jsonVisible,
+            "title": "JSON",
+            "width": "800px",
+            "form": ""
+        },
+        on: {
+            "on-close": function($event) {
+                _vm.jsonVisible = false
+            }
+        }
+    },
+    [_c('editor', {
+        attrs: {
+            "lang": "json",
+            "height": "340"
+        },
+        on: {
+            "init": _vm.editorInit
+        },
+        model: {
+            value: (_vm.jsonTemplateFn),
+            callback: function($$v) {
+                _vm.jsonTemplateFn = $$v
+            },
+            expression: "jsonTemplateFn"
+        }
+    }), _c('template', {
+        slot: "action"
+    },
+    [_c('Button', {
+        attrs: {
+            "id": "copybtn",
+            "data-clipboard-target": ".ace_text-input"
+        }
+    },
+    [_vm._v("双击复制")])], 1)], 2), _c('cus-dialog', {
+        ref: "codePreview",
+        attrs: {
+            "visible": _vm.codeVisible,
+            "title": "HTML代码",
+            "width": "800px",
+            "form": "",
+            "action": false
+        },
+        on: {
+            "on-close": function($event) {
+                _vm.codeVisible = false
+            }
+        }
+    },
+    [_c('editor', {
+        attrs: {
+            "lang": "html",
+            "height": "340"
+        },
+        on: {
+            "init": _vm.editorInit
+        },
+        model: {
+            value: (_vm.htmlTemplate),
+            callback: function($$v) {
+                _vm.htmlTemplate = $$v
+            },
+            expression: "htmlTemplate"
+        }
+    })], 1)], 1)
+}
 var Container_testvue_type_template_id_0462d3b7_staticRenderFns = []
 
 
@@ -33396,35 +33768,39 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
             },
             expression: "data.options.length"
         }
-    })], 1), _c('FormItem', {
-        attrs: {
-            "label": "Domain",
-            "required": true
-        }
-    },
-    [_c('Input', {
-        model: {
-            value: (_vm.data.options.domain),
-            callback: function($$v) {
-                _vm.$set(_vm.data.options, "domain", $$v)
-            },
-            expression: "data.options.domain"
-        }
-    })], 1), _c('FormItem', {
-        attrs: {
-            "label": "获取七牛Token方法",
-            "required": true
-        }
-    },
-    [_c('Input', {
-        model: {
-            value: (_vm.data.options.tokenFunc),
-            callback: function($$v) {
-                _vm.$set(_vm.data.options, "tokenFunc", $$v)
-            },
-            expression: "data.options.tokenFunc"
-        }
-    })], 1)] : _vm._e(), (_vm.data.type == 'blank') ? [_c('FormItem', {
+    })], 1), 
+    // _c('FormItem', {
+    //     attrs: {
+    //         "label": "Domain",
+    //         "required": true
+    //     }
+    // },
+    // [_c('Input', {
+    //     model: {
+    //         value: (_vm.data.options.domain),
+    //         callback: function($$v) {
+    //             _vm.$set(_vm.data.options, "domain", $$v)
+    //         },
+    //         expression: "data.options.domain"
+    //     }
+    // })], 1),
+
+    //  _c('FormItem', {
+    //     attrs: {
+    //         "label": "获取七牛Token方法",
+    //         "required": true
+    //     }
+    // },
+    // [_c('Input', {
+    //     model: {
+    //         value: (_vm.data.options.tokenFunc),
+    //         callback: function($$v) {
+    //             _vm.$set(_vm.data.options, "tokenFunc", $$v)
+    //         },
+    //         expression: "data.options.tokenFunc"
+    //     }
+    // })], 1)
+] : _vm._e(), (_vm.data.type == 'blank') ? [_c('FormItem', {
         attrs: {
             "label": "绑定数据类型"
         }
@@ -33699,8 +34075,8 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
             value: (_vm.data.options.formdefault),
             callback: function($$v) {
 
-                console.log(_vm.$parent);
  
+  
                 //  console.log(Container_testvue_type_script_lang_js_);
 
                 _vm.$set(_vm.data.options, "formdefault", $$v)
@@ -36962,6 +37338,9 @@ __webpack_require__("0808");
       }
     }
   },
+  created(){
+    this.getJiami();
+  },
   methods: {
     handleChange: function handleChange() {
       var _this = this;
@@ -36995,80 +37374,123 @@ __webpack_require__("0808");
 
       this.$refs.uploadInput.value = [];
     },
+    getJiami() {
+         axios
+          .post('http://www.xiaoyuanbangong.com/webapi/Index/getAliyunJiami')
+          .then(res => {
+            this.AccessKeyID = res.data.access_id;
+            this.url = res.data.url;
+            this.signature = res.data.signature;
+            this.olpolicy = res.data.policy;
+             // this.getolddata();
+          })
+         
+      },
     uplaodAction: function uplaodAction(res, file, key) {
-      var _this2 = this;
-
-      var changeIndex = this.fileList.findIndex(function (item) {
+ 
+      var changeIndex = this.fileList.findIndex( (item)=> {
         return item.key === key;
       });
-      console.log(this.fileList.findIndex(function (item) {
-        return item.key === key;
-      }));
-      var xhr = new XMLHttpRequest();
-      var url = 'http://upload-z2.qiniu.com/putb64/' + file.size;
-      xhr.open('POST', url, true);
-      xhr.setRequestHeader('Content-Type', 'application/octet-stream');
-      xhr.setRequestHeader('Authorization', 'UpToken ' + this.token);
-      xhr.send(res.split(',')[1]);
+    //   console.log(this.fileList.findIndex( (item)=> {
+    //     return item.key === key;
+    //   }));
+       //判断类型
+       const config = {
+        onUploadProgress: res => {
+          var complete =
+            ((res.loaded / res.total) * 100) || 0;
+ 
+                if (res.total && res.loaded) {
+                    console.log('done')
+                    // console.log(_this2.fileList)
 
-      xhr.onreadystatechange = function () {
-        console.log(xhr);
+                    this.$set(this.fileList[this.fileList.findIndex( (item)=> {
+                        return item.key === key;
+                    })], 'percent', res.loaded / res.total * 100);
+                }
 
-        if (xhr.readyState === 4) {
-          var resData = JSON.parse(xhr.response);
-
-          if (resData) {
-            _this2.$set(_this2.fileList, _this2.fileList.findIndex(function (item) {
-              return item.key === key;
-            }), _objectSpread({}, _this2.fileList[_this2.fileList.findIndex(function (item) {
-              return item.key === key;
-            })], {
-              url: _this2.domain + resData.key,
-              percent: 100
-            }));
-
-            setTimeout(function () {
-              _this2.$set(_this2.fileList, _this2.fileList.findIndex(function (item) {
-                return item.key === key;
-              }), _objectSpread({}, _this2.fileList[_this2.fileList.findIndex(function (item) {
-                return item.key === key;
-              })], {
-                status: 'success'
-              }));
-
-              _this2.$emit('input', _this2.fileList);
-            }, 200);
-          } else {
-            _this2.$set(_this2.fileList, _this2.fileList.findIndex(function (item) {
-              return item.key === key;
-            }), _objectSpread({}, _this2.fileList[_this2.fileList.findIndex(function (item) {
-              return item.key === key;
-            })], {
-              status: 'error'
-            }));
-
-            _this2.fileList.splice(_this2.fileList.findIndex(function (item) {
-              return item.key === key;
-            }), 1);
-          }
+ 
         }
       };
+       var timestamp  = Date.parse(new Date());
+      let lastx = file.name.lastIndexOf("\\");
 
-      xhr.onprogress = function (res) {
-        console.log('progress', res);
+      let lastdot = file.name.lastIndexOf(".");
+ 
+      let fileType = file.name.substring(lastdot + 1).toLowerCase(); //本地文件类型
 
-        if (res.total && res.loaded) {
-          _this2.$set(_this2.fileList[_this2.fileList.findIndex(function (item) {
-            return item.key === key;
-          })], 'percent', res.loaded / res.total * 100);
-        }
-      };
+      let name = file.name.substring(lastx + 1, lastdot); //本地文件名
+
+      let fileExtName =  name + '_'+  timestamp + "." + fileType;
+
+      var request = new FormData();
+      request.append("OSSAccessKeyId", this.AccessKeyID); //Bucket 拥有者的Access Key Id。
+      request.append("policy", this.olpolicy); //policy规定了请求的表单域的合法性
+      request.append("Signature", this.signature); //根据Access Key Secret和policy计算的签名信息，OSS验证该签名信息从而验证该Post请求的合法性
+      request.append(
+        "key",
+        fileExtName
+      );
+       //文件名字，可设置路径
+      request.append("success_action_status", "200"); // 让服务端返回200,不然，默认会返回204
+      request.append("file",file); //需要上传的文件 file
+
+      axios
+        .post(this.url, request, config)
+        .then(res => { 
+             let resData  = res.data;
+
+            if (1) {
+                this.$set(this.fileList, this.fileList.findIndex( (item)=>{
+                  return item.key === key;
+                }), _objectSpread({}, this.fileList[this.fileList.findIndex( (item)=>{
+                  return item.key === key;
+                })], {
+                  url: 'https://liangcai-product-south.oss-cn-shenzhen.aliyuncs.com/'+ fileExtName ,
+                  percent: 100
+                }));
+    
+                setTimeout( ()=> {
+                    this.$set(this.fileList, this.fileList.findIndex( (item)=>{
+                        return item.key === key;
+                    }), _objectSpread({}, this.fileList[this.fileList.findIndex( (item)=>{
+                        return item.key === key;
+                    })], {
+                        status: 'success'
+                    }));
+    
+                    this.$emit('input', this.fileList);
+                }, 200);
+              } else {
+                this.$set(this.fileList, this.fileList.findIndex( (item)=>{
+                  return item.key === key;
+                }), _objectSpread({}, this.fileList[this.fileList.findIndex( (item)=>{
+                  return item.key === key;
+                })], {
+                  status: 'error'
+                }));
+    
+                this.fileList.splice(this.fileList.findIndex( (item)=>{
+                  return item.key === key;
+                }), 1);
+              }
+
+ 
+
+        })
+       
+
+
+
+ 
     },
+    // 移除图片
     handleRemove: function handleRemove(key) {
       this.fileList.splice(this.fileList.findIndex(function (item) {
         return item.key === key;
       }), 1);
     },
+    // 预览图片
     handlePreviewFile: function handlePreviewFile(key) {
       var _this3 = this;
 
@@ -37930,8 +38352,7 @@ var GenerateFormItemvue_type_template_id_3427ad96_staticRenderFns = []
   created: function created() {
     var _this = this;
 
-    console.log(1111);
-    console.log(this.widget);
+    console.log(1111); 
 
     if (this.widget.options.remote && this.remote[this.widget.options.remoteFunc]) {
       this.remote[this.widget.options.remoteFunc](function (data) {
@@ -37945,6 +38366,7 @@ var GenerateFormItemvue_type_template_id_3427ad96_staticRenderFns = []
     }
 
     if (this.widget.type === 'imgupload') {
+        
       this.remote[this.widget.options.tokenFunc](function (data) {
         _this.widget.options.token = data;
       });
@@ -38353,9 +38775,9 @@ var advanceComponents = [{
       height: 100
     },
     width: '',
-    tokenFunc: 'funcGetToken',
-    token: '',
-    domain: 'http://pfp81ptt6.bkt.clouddn.com/',
+    tokenFunc: 'funcGetToken()',
+    token: '2',
+    domain: 'https://liangcai-product-south.oss-cn-shenzhen.aliyuncs.com',
     disabled: false,
     length: 8,
     multiple: true
@@ -38675,9 +39097,10 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
           }, 2000);
         },
         funcGetToken: function funcGetToken(resolve) {
-
+            
           util_request.get('http://www.xiaoyuanbangong.com/webapi/Index/getAliyunJiami').then(function (res) {
 
+            console.log('res');
             console.log(res);
 
             resolve(res.token);
@@ -38746,21 +39169,24 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
       });
     },
     getJson(){
-        return this.widgetForm;
+        console.log(this.widgetForm);
+
+        return generateCode(JSON.stringify( this.widgetForm ));
     },
     handleGenerateJson: function handleGenerateJson() {
-      this.jsonVisible = true;
+      this.jsonVisible = false;
       this.jsonTemplate = this.widgetForm;  
-        
 
-      this.$nextTick(function () {
-        //var editor = ace.edit('jsoneditor');
-        //editor.session.setMode('ace/mode/json');
-        //editor.setTheme('ace/theme/monokai');
-        // const editor = ace.edit('jsoneditor')
-        // editor.session.setMode("ace/mode/json")
-        var btnCopy = new clipboard_default.a('#copybtn');
-      });
+      this.$emit('submitJson',this.widgetForm)
+         
+    //   this.$nextTick(function () {
+    //     //var editor = ace.edit('jsoneditor');
+    //     //editor.session.setMode('ace/mode/json');
+    //     //editor.setTheme('ace/theme/monokai');
+    //     // const editor = ace.edit('jsoneditor')
+    //     // editor.session.setMode("ace/mode/json")
+    //     var btnCopy = new clipboard_default.a('#copybtn');
+    //   });
     },
     handleGenerateCode: function handleGenerateCode() {
       this.codeVisible = true;
