@@ -1,6 +1,7 @@
 <template>
   <div class="form-config-container">
     <Form label-position="top">
+      
       <FormItem label="标签对齐方式">
         <RadioGroup v-model="data.labelPosition" type="button">
           <Radio label="left">左对齐</Radio>

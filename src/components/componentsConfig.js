@@ -9,7 +9,8 @@ export const basicComponents = [
       required: false,
       dataType: 'text',
       pattern: '',
-      placeholder: ''
+      placeholder: '',
+
     }
   },
   {

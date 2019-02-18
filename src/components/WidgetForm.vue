@@ -86,11 +86,15 @@ export default {
       //console.log('add', evt)
       //console.log('end', evt)
       const newIndex = evt.newIndex
+      console.log(newIndex);
       const to = evt.to
       //console.log(to)
       
       //为拖拽到容器的元素添加唯一 key
       const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
+
+
+
       this.$set(this.data.list, newIndex, {
         ...this.data.list[newIndex],
         options: {

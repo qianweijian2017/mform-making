@@ -4,6 +4,7 @@
       <template v-for="item in data.list">
 
         <template v-if="item.type == 'grid'">
+          
           <Row
             :key="item.key"
             type="flex"
@@ -11,6 +12,7 @@
             :justify="item.options.justify"
             :align="item.options.align"
           >
+
             <Col v-for="(col, colIndex) in item.columns" :key="colIndex" :span="col.span">
               <template v-for="citem in col.list" >
                 <FormItem v-if="citem.type=='blank'" :label="citem.name" :prop="citem.model" :key="citem.key">

@@ -22,7 +22,7 @@ import MakingForm from './components/Container_test.vue'
 import GenerateForm from './components/GenerateForm.vue'
 // alert('in')
 Vue.component('icon', Icon)
-alert('3')
+
 MakingForm.install = function (Vue) {
   Vue.component(MakingForm.name, MakingForm)
 }

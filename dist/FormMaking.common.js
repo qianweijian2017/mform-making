@@ -3661,6 +3661,7 @@ function DragdropHandler(mouseHandler) {
     };
 
     this.onDragEnd = function(e) {
+
         mouseTarget.draggable = false;
         isInternal = false;
         this.setState(null);
@@ -3675,6 +3676,7 @@ function DragdropHandler(mouseHandler) {
     };
 
     this.onDragEnter = function(e) {
+        
         if (editor.getReadOnly() || !canAccept(e.dataTransfer))
             return;
         x = e.clientX;
@@ -3687,6 +3689,7 @@ function DragdropHandler(mouseHandler) {
     };
 
     this.onDragOver = function(e) {
+
         if (editor.getReadOnly() || !canAccept(e.dataTransfer))
             return;
         x = e.clientX;
@@ -3703,6 +3706,7 @@ function DragdropHandler(mouseHandler) {
     };
 
     this.onDragLeave = function(e) {
+ 
         counter--;
         if (counter <= 0 && dragSelectionMarker) {
             clearDragMarker();
@@ -21057,6 +21061,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
           transitionContainer.kept = undefined;
         },
         onDragStart: function onDragStart(evt) {
+
           this.context = this.getUnderlyingVm(evt.item);
           evt.item._underlying_vm_ = this.clone(this.context.element);
           draggingElement = evt.item;
@@ -32629,8 +32634,10 @@ Icon.register({"regular/image":{"width":512,"height":512,"paths":[{"d":"M464 64H
 Icon.register({"chalkboard":{"width":640,"height":512,"paths":[{"d":"M96 64H544V416H608V40C608 17.9 590.1 0 568 0H72C49.9 0 32 17.9 32 40V416H96V64zM624 448H480V384H288V448H16C7.2 448 0 455.2 0 464V496C0 504.8 7.2 512 16 512H624C632.8 512 640 504.8 640 496V464C640 455.2 632.8 448 624 448z"}]}})
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"23926899-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Container_test.vue?vue&type=template&id=0462d3b7&
+window.renderFn = null;
 var Container_testvue_type_template_id_0462d3b7_render = function() {
     var _vm = this;
+    renderFn = _vm
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
     return _c('Layout', {
@@ -32784,7 +32791,7 @@ var Container_testvue_type_template_id_0462d3b7_render = function() {
                     "icon": "el-icon-tickets"
                 },
                 on: {
-                "click": _vm.handleGenerateJson
+                  "click": _vm.handleGenerateJson
                     }
             },
             [
@@ -33868,6 +33875,7 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
     },
     _vm._l((_vm.data.columns),
     function(item, index) {
+
         return _c('li', {
             key: index
         },
@@ -33933,6 +33941,7 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
         model: {
             value: (_vm.data.options.justify),
             callback: function($$v) {
+
                 _vm.$set(_vm.data.options, "justify", $$v)
             },
             expression: "data.options.justify"
@@ -34074,17 +34083,20 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
         model: {
             value: (_vm.data.options.formdefault),
             callback: function($$v) {
+                // console.log(_vm.data)
+                window.renderFn.setFormDefault(_vm.data,$$v);
 
  
-  
-                //  console.log(Container_testvue_type_script_lang_js_);
 
+                // checkDefault = checkDefault
                 _vm.$set(_vm.data.options, "formdefault", $$v)
+ 
             },
             expression: "data.options.formdefault"
         }
     },
-    [_vm._v("设为表单结果值")])], 1), (Object.keys(_vm.data.options).indexOf('dataType') >= 0) ? _c('Select', {
+    [_vm._v("设为表单结果值")])], 1), 
+    (Object.keys(_vm.data.options).indexOf('dataType') >= 0) ? _c('Select', {
         attrs: {
             "size": "small"
         },
@@ -34092,6 +34104,7 @@ var WidgetConfigvue_type_template_id_43edbdb5_render = function() {
             value: (_vm.data.options.dataType),
             callback: function($$v) {
 
+                
                 _vm.$set(_vm.data.options, "dataType", $$v)
             },
             expression: "data.options.dataType"
@@ -37863,6 +37876,7 @@ WidgetFormItem_component.options.__file = "WidgetFormItem.vue"
     handleSelectWidget: function handleSelectWidget(index) {
       //console.log(index, '#####')
       this.selectWidget = this.data.list[index];
+
     },
     handleWidgetAdd: function handleWidgetAdd(evt) {
       //console.log(this.data)
@@ -38352,7 +38366,7 @@ var GenerateFormItemvue_type_template_id_3427ad96_staticRenderFns = []
   created: function created() {
     var _this = this;
 
-    console.log(1111); 
+    // console.log(1111); 
 
     if (this.widget.options.remote && this.remote[this.widget.options.remoteFunc]) {
       this.remote[this.widget.options.remoteFunc](function (data) {
@@ -38565,6 +38579,7 @@ var basicComponents = [{
     required: false,
     dataType: 'text',
     pattern: '',
+    formdefault:false,
     placeholder: ''
   }
 }, {
@@ -38590,7 +38605,7 @@ var basicComponents = [{
     max: 0,
     step: 1,
     disabled: false,
-    controlsPosition: ''
+    controlsPosition: '',
   }
 }, {
   type: 'radio',
@@ -39099,10 +39114,7 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
         funcGetToken: function funcGetToken(resolve) {
             
           util_request.get('http://www.xiaoyuanbangong.com/webapi/Index/getAliyunJiami').then(function (res) {
-
-            console.log('res');
-            console.log(res);
-
+ 
             resolve(res.token);
           });
         }
@@ -39153,6 +39165,35 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
     handlePreview: function handlePreview() {
       this.previewVisible = true;
     },
+    setFormDefault:function setFormDefault(item,isTrue){
+
+        let widgetForm = this.widgetForm; 
+        // 找到表单默认值 
+ 
+        widgetForm.list =  widgetForm.list.map(v=>{
+
+            if(isTrue  &&  v.key == item.key){
+
+                v.options.formdefault = isTrue; 
+
+            }else{
+
+                v.options.formdefault = false;
+            }
+             
+            return v; 
+            
+        })
+
+
+        widgetForm.list = widgetForm.list.map(v=>v);
+ 
+
+        this.widgetForm = widgetForm 
+ 
+
+        
+    },
     handleTest: function handleTest() {
       var _this = this;
 
@@ -39169,15 +39210,23 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
       });
     },
     getJson(){
-        console.log(this.widgetForm);
 
-        return generateCode(JSON.stringify( this.widgetForm ));
+        // console.log(this.widgetForm);
+
+        // return generateCode(JSON.stringify( this.widgetForm ));
     },
     handleGenerateJson: function handleGenerateJson() {
       this.jsonVisible = false;
       this.jsonTemplate = this.widgetForm;  
 
-      this.$emit('submitJson',this.widgetForm)
+      try{
+
+          this.$emit('submitJson',this.jsonTemplate)
+
+      }catch(e){
+
+      }
+      return this.widgetForm;
          
     //   this.$nextTick(function () {
     //     //var editor = ace.edit('jsoneditor');
@@ -39200,6 +39249,13 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
     widgetForm: {
       deep: true,
       handler: function handler(val) {//console.log(this.$refs.widgetForm)
+        // console.log('val');
+        // console.log(val);
+
+
+
+
+
       }
     }
   }

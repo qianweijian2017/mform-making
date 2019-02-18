@@ -225,7 +225,7 @@ export default {
     handleGenerateJson () {
       this.jsonVisible = true
 
-this.jsonTemplate = this.widgetForm
+      this.jsonTemplate = this.widgetForm
       this.$nextTick(() => {
 
         const editor = ace.edit('jsoneditor')
