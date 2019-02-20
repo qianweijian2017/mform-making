@@ -32766,37 +32766,40 @@ var Container_testvue_type_template_id_0462d3b7_render = function() {
     }))], 1)]), _c('Layout', {
         staticClass: "center-container"
     },
-    [_c('Header', {
+    [
+        _c('Header', {
         staticClass: "btn-bar",
         staticStyle: {
-            "height": "45px"
-        }
-    },
-    [_c('Button', {
-        attrs: {
-            "type": "text",
-            "size": "small",
-            "icon": "el-icon-view"
-        },
-        on: {
-            "click": _vm.handlePreview
+            "height": "10px"
         }
     },
     [
-        _vm._v("预览")]), 
-            _c('Button', {
-                attrs: {
-                    "type": "text",
-                    "size": "small",
-                    "icon": "el-icon-tickets"
-                },
-                on: {
-                  "click": _vm.handleGenerateJson
-                    }
-            },
-            [
-          _vm._v("提交保存")]
-        ), 
+    //     _c('Button', {
+    //     attrs: {
+    //         "type": "text",
+    //         "size": "small",
+    //         "icon": "el-icon-view"
+    //     },
+    //     on: {
+    //         "click": _vm.handlePreview
+    //     }
+    // },
+    // [
+    //     _vm._v("预览")]), 
+
+        //     _c('Button', {
+        //         attrs: {
+        //             "type": "text",
+        //             "size": "small",
+        //             "icon": "el-icon-tickets"
+        //         },
+        //         on: {
+        //           "click": _vm.handleGenerateJson
+        //             }
+        //     },
+        //     [
+        //   _vm._v("保存")]
+        // ), 
 
             // _c('Button', {
             //     attrs: {
@@ -32812,7 +32815,8 @@ var Container_testvue_type_template_id_0462d3b7_render = function() {
             //      _vm._v("生成代码")]
             // )
     ], 
-    1), 
+    1)
+    , 
     _c('Content', {
         class: {
             'widget-empty': _vm.widgetForm.list.length == 0
@@ -39164,10 +39168,17 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
     },
     handlePreview: function handlePreview() {
       this.previewVisible = true;
+
+     
+
     },
     setFormDefault:function setFormDefault(item,isTrue){
 
         let widgetForm = this.widgetForm; 
+        
+        this.widgetForm = null;
+
+        
         // 找到表单默认值 
  
         widgetForm.list =  widgetForm.list.map(v=>{
@@ -39190,6 +39201,7 @@ var vue2_ace_editor_default = /*#__PURE__*/__webpack_require__.n(vue2_ace_editor
  
 
         this.widgetForm = widgetForm 
+        
  
 
         

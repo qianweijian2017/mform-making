@@ -1,5 +1,6 @@
 <template>
   <FormItem :label="widget.name" :prop="widget.model">
+ 
     <template v-if="widget.type == 'input'" >
       <Input 
         v-if="widget.options.dataType == 'number' || widget.options.dataType == 'integer' || widget.options.dataType == 'float'"
@@ -17,11 +18,13 @@
       />
     </template>
     <template v-if="widget.type == 'textarea'">
+
       <Input type="textarea" :rows="5"
         v-model="dataModel"
         :placeholder="widget.options.placeholder"
         :style="{width: widget.options.width}"
       />
+      
     </template>
 
     <template v-if="widget.type == 'number'">
