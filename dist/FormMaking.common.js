@@ -22617,7 +22617,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
 				target = (touch || evt).target,
 				originalTarget = evt.target.shadowRoot && (evt.path && evt.path[0]) || target,
 				filter = options.filter,
-				startIndex;
+                startIndex;
 
 			_saveInputCheckedState(el);
 
@@ -22688,6 +22688,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
 				options = _this.options,
 				ownerDocument = el.ownerDocument,
 				dragStartFn;
+                // console.log('_prepareDragStart')
 
 			if (target && !dragEl && (target.parentNode === el)) {
 				tapEvt = evt;
@@ -23285,8 +23286,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
 						_dispatchEvent(this, rootEl, 'end', dragEl, parentEl, rootEl, oldIndex, newIndex);
 
 						// Save sorting
-						this.save();
-					}
+                        this.save();
+
+                    }
 				}
 
 			}
@@ -23402,8 +23404,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
 		 * Save the current sorting
 		 */
 		save: function () {
-			var store = this.options.store;
-			store && store.set(this);
+
+            var store = this.options.store;
+
+            store && store.set(this);
 		},
 
 
@@ -23787,6 +23791,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
 
 	// Fixed #973:
 	_on(document, 'touchmove', function (evt) {
+        // console.log('on')
 		if (Sortable.active) {
 			evt.preventDefault();
 		}
@@ -32635,6 +32640,7 @@ Icon.register({"chalkboard":{"width":640,"height":512,"paths":[{"d":"M96 64H544V
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"23926899-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Container_test.vue?vue&type=template&id=0462d3b7&
 window.renderFn = null;
+
 var Container_testvue_type_template_id_0462d3b7_render = function() {
     var _vm = this;
     renderFn = _vm
@@ -32897,15 +32903,19 @@ var Container_testvue_type_template_id_0462d3b7_render = function() {
         attrs: {
             "visible": _vm.previewVisible,
             "title": "预览",
-            "width": "1000px",
+            "width": "900px",
+            
             "form": ""
         },
         on: {
             "on-close": function($event) {
                 _vm.previewVisible = false
             },
-            "on-submit": _vm.handleTest
-        }
+            "on-submit": function($event) {
+                _vm.previewVisible = false
+            },
+            // "on-submit": _vm.handleTest
+         }
     },
     [(_vm.previewVisible) ? _c('generate-form', {
         ref: "generateForm",
@@ -32948,6 +32958,7 @@ var Container_testvue_type_template_id_0462d3b7_render = function() {
             "visible": _vm.jsonVisible,
             "title": "JSON",
             "width": "800px",
+            "height": "80vh",
             "form": ""
         },
         on: {
@@ -34304,7 +34315,7 @@ var WidgetFormItemvue_type_template_id_5347ef47_staticRenderFns = []
 // CONCATENATED MODULE: ./src/components/WidgetFormItem.vue?vue&type=template&id=5347ef47&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"23926899-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Upload/index.vue?vue&type=template&id=dc9c1c0a&
-var Uploadvue_type_template_id_dc9c1c0a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"fm-uplaod-container",attrs:{"id":_vm.uploadId}},[_vm._l((_vm.fileList),function(item){return _c('div',{key:item.key,staticClass:"upload-file",class:{uploading: item.status=='uploading', 'is-success': item.status=='success'},style:({width: _vm.width+'px', height: _vm.height+'px'}),attrs:{"id":item.key}},[_c('img',{attrs:{"src":item.url}}),(item.status=='uploading')?_c('i-circle',{staticClass:"upload-progress",attrs:{"size":_vm.miniWidth*0.9,"percent":item.percent}}):_vm._e(),(item.status=='success')?_c('label',{staticClass:"item-status"},[_c('Icon',{attrs:{"type":"md-checkmark"}})],1):_vm._e(),_c('div',{staticClass:"uplaod-action"},[_c('Icon',{style:({'font-size': _vm.miniWidth/4+'px'}),attrs:{"type":"ios-eye-outline"},on:{"click":function($event){_vm.handlePreviewFile(item.key)}}}),_c('Icon',{style:({'font-size': _vm.miniWidth/4+'px'}),attrs:{"type":"ios-trash-outline"},on:{"click":function($event){_vm.handleRemove(item.key)}}})],1)],1)}),(_vm.token)?_c('div',{staticClass:"ivu-upload-drag el-upload--picture-card",style:({width: _vm.width+'px', height: _vm.height+'px','line-height': _vm.height+'px'})},[_c('Icon',{attrs:{"type":"ios-camera","size":"20"}}),_c('input',{ref:"uploadInput",staticClass:"el-upload__input upload-input",style:({width: _vm.width+'px', height: _vm.height+'px'}),attrs:{"accept":"image/*","multiple":"","type":"file","name":"file"},on:{"change":_vm.handleChange}})],1):_vm._e()],2)}
+var Uploadvue_type_template_id_dc9c1c0a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"fm-uplaod-container",attrs:{"id":_vm.uploadId}},[_vm._l((_vm.fileList),function(item){return _c('div',{key:item.key,staticClass:"upload-file",class:{uploading: item.status=='uploading', 'is-success': item.status=='success'},style:({width: _vm.width+'px', height: _vm.height+'px'}),attrs:{"id":item.key}},[_c('img',{attrs:{"src":item.url}}),(item.status=='uploading')?_c('i-circle',{staticClass:"upload-progress",attrs:{"size":_vm.miniWidth*0.9,"percent":item.percent}}):_vm._e(),(item.status=='success')?_c('label',{staticClass:"item-status"},[_c('Icon',{attrs:{"type":"md-checkmark"}})],1):_vm._e(),_c('div',{staticClass:"uplaod-action"},[_c('Icon',{style:({'font-size': _vm.miniWidth/4+'px'}),attrs:{"type":"ios-eye-outline"},on:{"click":function($event){_vm.handlePreviewFile(item.key)}}}),_c('Icon',{style:({'font-size': _vm.miniWidth/4+'px'}),attrs:{"type":"ios-trash-outline"},on:{"click":function($event){_vm.handleRemove(item.key)}}})],1)],1)}),(_vm.token)?_c('div',{staticClass:"ivu-upload-drag el-upload--picture-card",style:({width: _vm.width+'px', height: _vm.height+'px','line-height': _vm.height+'px'})},[_c('Icon',{attrs:{"type":"ios-camera","size":"20"}}),_c('input',{ref:"uploadInput",staticClass:"el-upload__input upload-input",style:({width: _vm.width+'px', height: _vm.height+'px'}),attrs:{"multiple":"","type":"file","name":"file"},on:{"change":_vm.handleChange}})],1):_vm._e()],2)}
 var Uploadvue_type_template_id_dc9c1c0a_staticRenderFns = []
 
 
